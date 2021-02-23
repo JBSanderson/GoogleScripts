@@ -1,0 +1,11 @@
+function ClearAnswers() {
+   var sheets = SpreadsheetApp.getActive().getSheetByName('Group Answers').getRange('B1:P1').getValues()[0];
+  console.log(sheets);
+
+  for (var sheetName in sheets)
+  {
+    console.log(sheets[sheetName]);
+    sheet = SpreadsheetApp.getActive().getSheetByName(sheets[sheetName]);
+    sheet.getRange('B2:B13').clearContent();
+  }
+}
